@@ -1,4 +1,4 @@
-package com.example.sampleapp.ui
+package com.example.sampleapp.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.sampleapp.data.remote.model.GetPostResponse
 import com.example.sampleapp.data.repository.AppRepository
 import com.example.sampleapp.data.utils.Resource
-import com.example.sampleapp.ui.base.BaseViewModel
+import com.example.sampleapp.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -30,5 +30,4 @@ class MainViewModel @Inject constructor(
             _response.value = response
         }
     }
-
 }

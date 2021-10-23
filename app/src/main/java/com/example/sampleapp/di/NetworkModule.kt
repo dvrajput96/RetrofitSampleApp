@@ -66,14 +66,4 @@ object NetworkModule {
     @Provides
     fun provideAppService(retrofit: Retrofit): AppService = retrofit.create(AppService::class.java)
 
-    @Singleton
-    @Provides
-    fun provideAppRemoteDataSource(appService: AppService) = AppRemoteDataSource(appService)
-
-    @Singleton
-    @Provides
-    fun provideRepository(
-        remoteDataSource: AppRemoteDataSource
-    ) = AppRepository(remoteDataSource)
-
 }

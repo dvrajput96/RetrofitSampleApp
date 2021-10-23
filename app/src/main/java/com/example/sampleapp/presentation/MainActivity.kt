@@ -1,9 +1,9 @@
-package com.example.sampleapp.ui
+package com.example.sampleapp.presentation
 
 import androidx.activity.viewModels
 import com.example.sampleapp.data.utils.Resource
 import com.example.sampleapp.databinding.ActivityMainBinding
-import com.example.sampleapp.ui.base.BaseVBActivity
+import com.example.sampleapp.presentation.base.BaseVBActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -17,7 +17,6 @@ class MainActivity :
         mainViewModel.response.observe(this) { response ->
             Timber.d(">>>>>>>> %s", response.status)
             Timber.d(">>>>>>>> %s", response.message)
-            Timber.d(">>>>>>>> %s", response.data.toString())
             when (response.status) {
                 Resource.Status.LOADING -> {
                     // bind data to the view
@@ -35,6 +34,7 @@ class MainActivity :
     override fun viewSetup() {
         binding?.textview?.text = "Hey There"
         mainViewModel.getPosts()
+
     }
 
 }
