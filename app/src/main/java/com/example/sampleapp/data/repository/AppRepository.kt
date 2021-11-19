@@ -39,6 +39,7 @@ class AppRepository @Inject constructor(
                             localDataSource.insert(posts)
                         }
                         //localDataSource.insertAll(data)
+                        getPostsFromLocal()
                     }
                 }
             }

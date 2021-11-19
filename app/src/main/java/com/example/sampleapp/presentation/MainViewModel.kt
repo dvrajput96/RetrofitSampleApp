@@ -27,7 +27,7 @@ class MainViewModel @Inject constructor(
      */
     fun getPosts() = viewModelScope.launch {
         repository.getPost().collect { response ->
-            _response.value = response
+            _response.postValue(response)
         }
     }
 }

@@ -2,6 +2,7 @@ package com.example.sampleapp
 
 import android.app.Application
 import com.example.sampleapp.utils.TimberDebugTree
+import com.facebook.stetho.Stetho
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -18,6 +19,7 @@ class SampleApp : Application() {
         instance = this
         if (BuildConfig.DEBUG) {
             Timber.plant(TimberDebugTree())
+            Stetho.initializeWithDefaults(this)
         }
     }
 }
